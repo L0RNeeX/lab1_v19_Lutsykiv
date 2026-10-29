@@ -20,10 +20,3 @@ out/
 target/
 *.class
 REPORT.docx
-.vs/
-.vscode/
-build/
-out/
-target/
-*.class
-REPORT.docx
