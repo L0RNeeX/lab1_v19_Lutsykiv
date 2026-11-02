@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-/** Консольна програма «Кінотеатр»: класи, record та інкапсуляція, варіант 19. */
+/** Консольна програма «Кінотеатр»: збережений запуск і файлові параметри. */
 public final class Lab02 {
     private Lab02() { }
 
@@ -142,9 +142,9 @@ public final class Lab02 {
 
     /** Друкує синтаксис запуску та незмінний формат вхідних даних. */
     private static void printHelp(PrintStream output) {
-        output.printf("Кінотеатр — лабораторна робота № 2, варіант 19, рівень 1.%n");
-        output.printf("Запуск: java -cp build/classes Lab02 [--input файл] [--output файл]%n");
-        output.printf("Довідка: java -cp build/classes Lab02 --help%n");
+        output.printf("Кінотеатр — лабораторна робота № 3, варіант 19, рівень 1.%n");
+        output.printf("Запуск: java -cp build/classes Lab03 [--input файл] [--output файл]%n");
+        output.printf("Довідка: java -cp build/classes Lab03 --help%n");
         output.printf("JAR: java -jar target/cinema-v19.jar [--input файл] [--output файл]%n");
         output.printf("Типовий вхід: data/input.csv; типовий вихід: out/report.txt.%n");
         output.printf("Формат UTF-8 без заголовка: film;hall;ticketPrice;sold;durationMin%n");

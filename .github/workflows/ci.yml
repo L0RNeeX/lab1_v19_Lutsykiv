@@ -1,0 +1,38 @@
+name: Java 21 checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Verify on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: .\mvnw.cmd -B verify
+      - name: Verify on Unix
+        if: runner.os != 'Windows'
+        run: sh ./mvnw -B verify
+      - name: Run JAR
+        run: java "-Dfile.encoding=UTF-8" -jar target/cinema-v19.jar
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinema-v19-${{ matrix.os }}
+          path: target/cinema-v19.jar
+          if-no-files-found: error
