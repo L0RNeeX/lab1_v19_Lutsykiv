@@ -30,7 +30,7 @@ public final class CinemaReport {
      */
     public static CinemaReport fromLines(List<String> lines) {
         Objects.requireNonNull(lines, "Список рядків не може бути null");
-        List<Screening> screenings = new ArrayList<>();
+        Repository<Screening> repository = new Repository<>();
         List<String> errors = new ArrayList<>();
         double totalRevenue = 0.0;
         double totalPrices = 0.0;
@@ -43,7 +43,7 @@ public final class CinemaReport {
                 if (!Double.isFinite(nextRevenue) || !Double.isFinite(nextPrices)) {
                     throw new IllegalArgumentException("завеликі числа спричиняють переповнення");
                 }
-                screenings.add(screening);
+                repository.add(screening);
                 totalRevenue = nextRevenue;
                 totalPrices = nextPrices;
                 maxSold = Math.max(maxSold, screening.getSold());
@@ -51,7 +51,7 @@ public final class CinemaReport {
                 errors.add("Рядок %d: %s.".formatted(index + 1, exception.getMessage()));
             }
         }
-        return new CinemaReport(screenings, errors, totalRevenue, totalPrices, maxSold);
+        return new CinemaReport(repository.all(), errors, totalRevenue, totalPrices, maxSold);
     }
 
     /**
