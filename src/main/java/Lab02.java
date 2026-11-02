@@ -142,8 +142,8 @@ public final class Lab02 {
 
     /** Друкує синтаксис запуску та незмінний формат вхідних даних. */
     private static void printHelp(PrintStream output) {
-        output.printf("Кінотеатр — лабораторна робота № 3, варіант 19, рівень 1.%n");
-        output.printf("Запуск: java -cp build/classes Lab03 [--input файл] [--output файл]%n");
+        output.printf("Кінотеатр — лабораторна робота № 4, варіант 19, рівень 1.%n");
+        output.printf("Запуск: java -cp build/classes Lab04 [--input файл] [--output файл]%n");
         output.printf("Довідка: java -cp build/classes Lab03 --help%n");
         output.printf("JAR: java -jar target/cinema-v19.jar [--input файл] [--output файл]%n");
         output.printf("Типовий вхід: data/input.csv; типовий вихід: out/report.txt.%n");

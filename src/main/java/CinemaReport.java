@@ -109,7 +109,7 @@ public final class CinemaReport {
                 : String.format(Locale.ROOT, "%.2f грн", getAveragePrice());
         String maxText = screenings.isEmpty() ? "немає даних" : Integer.toString(maxSold);
         StringBuilder report = new StringBuilder(String.format(Locale.ROOT, """
-                Лабораторна робота № 3 — Кінотеатр%nВаріант: 19; рівень: 1%n%nКоректних записів: %d%nЗагальний виторг: %.2f грн%nСередня ціна квитка: %s%nНайбільша кількість проданих квитків: %s%nПропущених рядків: %d%n""",
+                Лабораторна робота № 4 — Кінотеатр%nВаріант: 19; рівень: 1%n%nКоректних записів: %d%nЗагальний виторг: %.2f грн%nСередня ціна квитка: %s%nНайбільша кількість проданих квитків: %s%nПропущених рядків: %d%n""",
                 getCount(), totalRevenue, averageText, maxText, errors.size()));
         if (screenings.isEmpty()) {
             report.append(String.format("%nКоректних записів немає; середнє та максимум не визначено.%n"));

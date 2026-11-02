@@ -89,7 +89,7 @@ public final class Lab03Checks {
             CinemaReport r = CinemaReport.fromLines(Files.readAllLines(
                     Path.of("data/input.csv"), StandardCharsets.UTF_8));
             String before = Files.readString(Path.of("src/test/resources/lab01-report.txt"), StandardCharsets.UTF_8);
-            String after = r.toText().replace("Лабораторна робота № 3", "Лабораторна робота № 1");
+            String after = r.toText().replace("Лабораторна робота № 4", "Лабораторна робота № 1");
             equal(before.replace("\r\n", "\n"), after.replace("\r\n", "\n"));
         }));
         return List.copyOf(tests);

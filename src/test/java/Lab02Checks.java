@@ -138,7 +138,7 @@ public final class Lab02Checks {
         });
         add(tests, "Звіт", "Порівняння з фактичним звітом роботи 1", () -> {
             String old = Files.readString(Path.of("src/test/resources/lab01-report.txt"), StandardCharsets.UTF_8);
-            String now = sample().toText().replace("Лабораторна робота № 3", "Лабораторна робота № 1");
+            String now = sample().toText().replace("Лабораторна робота № 4", "Лабораторна робота № 1");
             equal(normalize(old), normalize(now));
         });
         add(tests, "Звіт", "Порожній список", () -> {
